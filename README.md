@@ -1,5 +1,5 @@
 # Defensive Demo
-This DEMO project is WORK IN PROGRESS 
+This DEMO project is used for running Chaos Experiment
 
 ## REST endpoints
 - `/actuator/chaosmonkey` - Chaos Monkey for Spring Boot
@@ -13,8 +13,11 @@ source  ~/.venvs/chaostk/bin/activate
 pip install chaostoolkit-spring
 ```
 Run the experiment:
+`chaos run experiments.json`
+
+Output:
 ```
-(chaostk)  chaostk  chaos run experiments.json
+(chaostk)  chaostk > chaos run experiments.json
 [2020-05-17 12:24:50 INFO] Validating the experiment's syntax
 [2020-05-17 12:24:50 INFO] Experiment looks valid
 [2020-05-17 12:24:50 INFO] Running experiment: Employee when database is down
