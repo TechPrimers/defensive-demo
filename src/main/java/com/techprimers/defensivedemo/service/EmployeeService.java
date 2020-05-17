@@ -6,6 +6,8 @@ import com.techprimers.defensivedemo.model.Employee;
 import com.techprimers.defensivedemo.repository.EmployeeRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +34,15 @@ public class EmployeeService {
     }
 
     public List<Employee> getAll() {
-        return repository.findAll();
+        List<Employee> employees = null;
+        try {
+            employees = repository.findAll();
+        } catch (Exception e) {
+            System.out.println("STackTrace: " + Arrays.toString(e.getStackTrace()));
+            System.out.println("Caught an Exception....");
+            employees = new ArrayList<>();
+        }
+        return employees;
     }
 
     public Employee update(Integer employeeId, Employee employee) {
